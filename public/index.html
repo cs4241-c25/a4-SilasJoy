@@ -10,10 +10,67 @@
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 <body>
-<form>
-    <label for="yourname">Your Name: </label><input type="text" id="yourname" value="your name here">
-    <button>submit</button>
-</form>
+
+<div class="flex-container">
+    <h1>Balatro Game Tracker</h1>
+
+    <form>
+
+        <label for="highchips">Highest Chips: </label>
+        <input type="number" id="highchips"><br>
+        <label for="highmult">Highest Mult: </label>
+        <input type="number" id="highmult"><br>
+
+
+
+        <label>Stake Played:</label>
+        <div class="circle-container">
+            <div class="radio-item"><input type="radio" id="white" name="stake" value="White" checked><label for="white">White</label></div>
+            <div class="radio-item"><input type="radio" id="red" name="stake" value="Red"><label for="red">Red</label></div>
+            <div class="radio-item"><input type="radio" id="green" name="stake" value="Green"><label for="green">Green</label></div>
+            <div class="radio-item"><input type="radio" id="black" name="stake" value="Black"><label for="black">Black</label></div>
+            <div class="radio-item"><input type="radio" id="blue" name="stake" value="Blue"><label for="blue">Blue</label></div>
+            <div class="radio-item"><input type="radio" id="purple" name="stake" value="Purple"><label for="purple">Purple</label></div>
+            <div class="radio-item"><input type="radio" id="orange" name="stake" value="Orange"><label for="orange">Orange</label></div>
+            <div class="radio-item"><input type="radio" id="gold" name="stake" value="Gold"><label for="gold">Gold</label></div>
+        </div>
+
+        <label for="deck">Deck Used: </label>
+        <select id="deck" name="deck">
+            <option selected value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Green">Green</option>
+            <option value="Black">Black</option>
+            <option value="Magic">Magic</option>
+            <option value="Nebula">Nebula</option>
+            <option value="Ghost">Ghost</option>
+            <option value="Abandoned">Abandoned</option>
+            <option value="Checkered">Checkered</option>
+            <option value="Zodiac">Zodiac</option>
+            <option value="Painted">Painted</option>
+            <option value="Anaglyph">Anaglyph</option>
+            <option value="Plasma">Plasma</option>
+            <option value="Erratic">Erratic</option>
+        </select>
+        <button>submit</button>
+    </form>
+
+    <h2>Previous Games</h2>
+    <table id="data">
+        <thead>
+            <tr>
+                <th>Chips</th>
+                <th>Mult</th>
+                <th>Score</th>
+                <th>Deck</th>
+                <th>Stake</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>

@@ -1,4 +1,65 @@
+* {
+    font-family: Verdana, sans-serif;
+}
+
 body {
-    background:black;
+    background:rgb(8,133,80);
     color:white;
 }
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: Garamond, serif;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+#white {accent-color: white;}
+#red {accent-color: red;}
+#green {accent-color: green;}
+#black {accent-color: black;}
+#blue {accent-color: blue;}
+#purple {accent-color: purple;}
+#orange {accent-color: orange;}
+#gold {accent-color: gold;}
+
+.circle-container {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto;
+}
+
+.radio-item {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+:root {
+    --radius: 90px;
+}
+
+.radio-item:nth-child(1) { top: calc(50% - var(--radius) * cos(0deg)); left: calc(50% + var(--radius) * sin(0deg)); }
+.radio-item:nth-child(2) { top: calc(50% - var(--radius) * cos(45deg)); left: calc(50% + var(--radius) * sin(45deg)); }
+.radio-item:nth-child(3) { top: calc(50% - var(--radius) * cos(90deg)); left: calc(50% + var(--radius) * sin(90deg)); }
+.radio-item:nth-child(4) { top: calc(50% - var(--radius) * cos(135deg)); left: calc(50% + var(--radius) * sin(135deg)); }
+.radio-item:nth-child(5) { top: calc(50% - var(--radius) * cos(180deg)); left: calc(50% + var(--radius) * sin(180deg)); }
+.radio-item:nth-child(6) { top: calc(50% - var(--radius) * cos(225deg)); left: calc(50% + var(--radius) * sin(225deg)); }
+.radio-item:nth-child(7) { top: calc(50% - var(--radius) * cos(270deg)); left: calc(50% + var(--radius) * sin(270deg)); }
+.radio-item:nth-child(8) { top: calc(50% - var(--radius) * cos(315deg)); left: calc(50% + var(--radius) * sin(315deg)); }
+

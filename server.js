@@ -8,13 +8,7 @@ const http = require( "node:http" ),
     dir  = "public/",
     port = 3000
 
-const appdata = [
-    { "model": "toyota", "year": 1999, "mpg": 23 },
-    { "model": "honda", "year": 2004, "mpg": 30 },
-    { "model": "ford", "year": 1987, "mpg": 14}
-]
 
-// let fullURL = ""
 const server = http.createServer( function( request,response ) {
     if( request.method === "GET" ) {
         handleGet( request, response )
@@ -22,9 +16,6 @@ const server = http.createServer( function( request,response ) {
         handlePost( request, response )
     }
 
-    // The following shows the requests being sent to the server
-    // fullURL = `http://${request.headers.host}${request.url}`
-    // console.log( fullURL );
 })
 
 const handleGet = function( request, response ) {
@@ -32,7 +23,7 @@ const handleGet = function( request, response ) {
 
     if( request.url === "/" ) {
         sendFile( response, "public/index.html" )
-    }else{
+    }else {
         sendFile( response, filename )
     }
 }
@@ -47,10 +38,11 @@ const handlePost = function( request, response ) {
     request.on( "end", function() {
         console.log( JSON.parse( dataString ) )
 
-        // ... do something with the data here and at least generate the derived data
+        let json = JSON.parse(dataString)
+        json.score = json.chips * json.mult
 
         response.writeHead( 200, "OK", {"Content-Type": "text/plain" })
-        response.end("text")
+        response.end(JSON.stringify(json))
     })
 }
 
